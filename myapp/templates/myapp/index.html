@@ -1,0 +1,62 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+
+{% block body_block %}
+       
+     <!--Adding images to the front page in rotation-->
+     <div class="container">
+     <div id="carouselExampleSlidesOnly" class="carousel slide rotationImage" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://banner2.cleanpng.com/20180706/fxx/kisspng-programming-language-computer-programming-java-programacion-5b3f8646158f52.2036118315308897980883.jpg" class="d-block w-100" alt="cannot be loaded">
+        </div>
+        <div class="carousel-item">
+          <img src="https://pt-corp.com/wp-content/uploads/2018/03/Blockchain-Technology.jpg" class="d-block w-100" alt="cannot be loaded">
+        </div>
+        <div class="carousel-item">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ9nzAhiial7ujWtmgY2A5Di5zlukXLjU1vzg&usqp=CAU" class="d-block w-100" alt="cannot be loaded">
+        </div>
+        <div class="carousel-item">
+          <img src="https://www.campussafetymagazine.com/wp-content/uploads/2020/03/cybersecurity-2019.jpg" class="d-block w-100" alt="cannot be loaded">
+        </div>
+      </div>
+    </div>
+
+     <!--Adding three introductional blocks to the front page.-->
+ 
+       <table id="firstPageTable">
+         <tr class=row>
+          <td class="col-12 col-md-5 content">     <!--spacing class is used for the padding of the text written.-->
+            <h3 class="spacing">WHY TECHADEMICS</h3>
+            <p class="spacing">Our vision is to let every student go across standard learning and unlock new intelligence power. We are preparing the next
+              generation of professionals having hands-on into the cognitive world.We offer IT consulting, Industrial Training Program in various
+              technologies, Web Development and Cloud services as well. We believe in “Making of the era with professionals” in this highly
+              competitive workplace.</p>
+          </td>
+          <td class="col-12 col-md-3 content">
+            <h3 class="spacing">OUR Business Partner</h3>
+            <p class="spacing">“For more than a century our bussiness partner has been dedicated to every client's success and to creating innovations that matter
+              for the world.”</p>
+          </td>
+          <td class="col-12 col-md-3 content">
+            <h3 class="spacing">OUR certified trainers</h3>
+            <p class="spacing">“we are having our finest certified trainers who will fill up brains with the knowledge of today’s growing technologies.”</p>
+          </td>
+         </tr>
+       </table>
+
+      <!-- It displays the 4 pics in the center of the page -->
+
+        <table id="imagesTable">
+        <tr class="row">
+          <td class="col-12 col-md-6"><img class="firstPageTableImage" src="{% static 'images/PicsArt_07-22-04.34.22.jpg' %}" alt="image cannot be loaded"></td>
+          <td class="col-12 col-md-6"><img class="firstPageTableImage" src="{% static 'images/PicsArt_07-22-04.40.34.jpg' %}" alt="image cannot be loaded"></td>
+        </tr>
+        <tr class="row">
+          <td class="col-12 col-md-6"><img class="firstPageTableImage" src="{% static 'images/PicsArt_07-22-04.45.43.jpg' %}" alt="image cannot be loaded"></td>
+          <td class="col-12 col-md-6"><img class="firstPageTableImage" src="{% static 'images/PicsArt_07-22-05.00.16.jpg' %}" alt="image cannot be loaded"></td>
+        </tr>
+        </table>
+      </div>
+
+{% endblock %}

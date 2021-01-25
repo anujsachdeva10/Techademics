@@ -1,0 +1,88 @@
+{% extends 'myapp/base.html' %}
+
+{% block body_block %}
+
+     <h1 class="main-heading">Registration</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        <div class="container form-color">
+        <div class="form-row row-margin">  <!--form row makes all the fields inside it into a single row. Here the first name and the last name will be in the same row.-->
+            <div class="col-12 col-md-6">         <!--this specifies that how many columns the fields will take.-->
+                <label for="uFirstName">FIRST NAME</label>
+                <input id="uFirstName" class="form-control" type="text" name="userFirstName" placeholder="Enter your First Name" required> <!--form control class helps
+                    to display the form fields in the proper manner eg. extend the ans. space to fill the page, taking the label and the input in separate lines etc.-->
+            </div>
+            <div class="col-12 col-md-6">
+                <label for="uLastName">LAST NAME</label>
+                <input id="uLastName" class="form-control" type="text" name="userLastName" placeholder="Enter your Last Name" required>
+            </div>
+        </div>
+
+        <div class="form-row row-margin">
+            <div class="col-12">
+                <label for="uAddress">ADDRESS</label>
+                <input id="uAddress" class="form-control" type="text" name="userAddress" placeholder="Enter your Address" required>
+            </div>
+        </div>
+
+        <div class="form-row row-margin"> 
+            <div class="col-12 col-md-2"> 
+                <label for="uGender">GENDER</label>
+                <select name="userGender" id="uGender" class="form-control" required>
+                    <option value="Male">MALE</option>
+                    <option value="Female">FEMALE</option>
+                    <option value="Others">OTHERS</option>
+                </select>
+            </div>
+                                                  <!--form row makes all the fields inside it into a single row. Here the first name and the last name will be in the same row.-->
+            <div class="col-12 col-md-4">         <!--this specifies that how many columns the fields will take.-->
+                <label for="uPhoneNumber">PHONE NUMBER</label>
+                <input id="uPhoneNumber" class="form-control" type="number" name="userPhoneNumber" placeholder="Enter your Phone Number" required> <!--form control class helps
+                    to display the form fields in the proper manner eg. extend the ans. space to fill the page, taking the label and the input in separate lines etc.-->
+            </div>
+            <div class="col-12 col-md-6">
+                    <label for="uEmail">E-MAIL</label>
+                    <input id="uEmail" class="form-control" type="email" name="userEmail" placeholder="Enter your E-Mail" required>
+            </div>
+        </div>
+
+        <div class="form-row row-margin">  <!--form row makes all the fields inside it into a single row. Here the first name and the last name will be in the same row.-->
+            <div class="col-12 col-md-6">         <!--this specifies that how many columns the fields will take.-->
+                <label for="uRollNumber">ROLL NUMBER</label>
+                <input id="uRollNumber" class="form-control" type="number" name="userRollNumber" placeholder="Enter your Roll Number" required> <!--form control class helps
+                    to display the form fields in the proper manner eg. extend the ans. space to fill the page, taking the label and the input in separate lines etc.-->
+            </div>
+            <div class="col-12 col-md-6">
+                <label for="uTrade">TRADE</label>
+                <input id="uTrade" class="form-control" type="text" name="userTrade" placeholder="Enter your Trade" required>
+            </div>
+        </div>
+
+        <div class="form-row row-margin">
+            <div class="col-12">
+                <label for="uCollege">COLLEGE</label>
+                <input id="uCollege" class="form-control" type="text" name="userCollege" placeholder="Enter your College Name" required>
+            </div>
+        </div>
+
+        <div class="form-row row-margin">
+            <div class="col-12">
+                <label for="uCourse">COURSE</label>
+                <select name="userCourse" id="uCourse" class="form-control" required>
+                    <option value="ANDROID APP DEVELOPMENT">ANDROID APP DEVELOPMENT</option>
+                    <option value="ARTIFICIAL INTELLIGENCE">ARTIFICIAL INTELLIGENCE</option>
+                    <option value="BLOCKCHAIN">BLOCKCHAIN</option>
+                    <option value="CLOUD COMPUTING">CLOUD COMPUTING</option>
+                    <option value="CYBER-SECURITY">CYBER-SECURITY</option>
+                    <option value="WEB-DEVELOPMENT">WEB-DEVELOPMENT</option>
+                </select>
+            </div>
+        </div>
+
+        <input class="btn btn-primary submit-margin" type="submit" value="submit">
+
+        </div>
+    </form>
+          
+{% endblock %}

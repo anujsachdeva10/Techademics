@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+
+     <head>
+        <title>NodeJS Starter Application</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--      CONNECTING BOOTSTRAP TO OUR PROJECT-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+         <style>
+             /* Here we have formed a block around the form using the block tag and then we have set its width accordingly. */
+             .form{
+                display: inline-block;
+                width: 30%;
+             }
+             /* This text-align will work on all the blocks. Hence it will center align the block and therefore form. */
+             body{
+                text-align: center;
+             }
+             /* This defines the width of the form inside the container. */
+             form{
+                width: 100%;
+             }
+         </style>
+    </head>
+
+    <body>
+
+<!--            <div class="row">-->
+                <div class="form">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="form-color">
+                                <label for="name">UserName</label>
+                                <input id="name" class="form-control" type="text" name="username" placeholder="Enter UserName" required>
+                                <label for="email">Email</label>
+                                <input class="form-control" id="email" type="text" name="useremail" placeholder="Enter Email" required>
+                                <label for="password">Password</label>
+                                <input id="password" class="form-control" type="text" name="userpassword" placeholder="Enter Password" required>
+                                <label for="confirmpassword">UserName</label>
+                                <input id="confirmpassword" class="form-control" type="text" name="userconfirm_password" placeholder="Enter Password Again" required>
+                            <input type="submit" value="SIGNUP" class="btn btn-primary">
+                        </div>
+                    </form>
+                </div>
+<!--            </div>-->
+
+    </body>
+</html>

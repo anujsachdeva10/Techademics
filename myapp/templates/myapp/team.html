@@ -1,0 +1,47 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+
+{% block body_block %}
+
+            <h2 class="main-heading-styling">Our Instructor's Team</h2>
+            <p class="main-heading-text">We have one of the finest instructors team who have expertise in their respective fields and have ample of
+              corporate experience as well.
+            </p>
+
+            <table class="courseTable">
+                <tr class="row">
+                    {% for member in members %}
+                    <td class="col-12 col-sm-6 col-lg-4 spacing2">
+                        <div class="card card-layout-team" style="width: 19rem;">
+                                <img src="{{ member.photo.url }}" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  
+                                  <p><h5 class="main-heading">{{member.name}}</h5>
+                                    <pre></pre>
+                                    <span class="line-heading">Course:-</span><a class="link-color" href="mobile-app-development.html">{{member.course}}</a></br>
+                                    <pre></pre>
+                                    <span class="line-heading">Graduation:-</span>{{ member.graduation }}</br>
+                                    <pre></pre>
+                                    <span class="line-heading">Experience:-</span>{{member.experience}}
+                                </p>
+                                    {% if user.is_authenticated %}
+                                    <a href="{% url 'myapp:delete_team_member' pk=member.pk %}" class="btn btn-danger">Delete</a>
+                                    <a href="{% url 'myapp:update_team_member' pk=member.pk %}" class="btn btn-info">Update</a>
+                                    {% endif %}
+                                </div>
+                        </div>
+                    </td>
+                    {% endfor %}
+                </tr>
+            </table>
+
+
+            {% if user.is_authenticated %}
+                <div class="container">
+                    <div class="col-12-md text-center">
+                        <a href="{% url 'myapp:create_team_member' %}" class="btn btn-primary">Add Team Member</a>
+                    </div>
+                </div>
+            {% endif %}
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'myapp/base.html' %}
+
+{% block body_block %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="blog_posts">
+                    <h3>Create New Member</h3>
+                    <pre></pre>
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <input type="submit" name="" value="Save" class="btn btn-primary">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}

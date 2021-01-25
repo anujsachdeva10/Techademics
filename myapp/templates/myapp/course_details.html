@@ -1,0 +1,72 @@
+{% extends 'myapp/base.html' %}
+
+{% block body_block %}
+
+            <h2 class="page-main-heading">{{course.course_name}}</h2>
+
+                        <!-- CONTENT OF THE WINDOW -->
+            <div class="container paragraph-layout">
+              <table class="introduction-table">
+              <th>
+                  <h3 class="heading">  INTRODUCTION TO {{course.course_name}}</h3>
+              </th>
+              <tr>
+                  <td>
+                  {{course.introduction|safe|linebreaksbr}}
+                </td>
+              </tr>
+              <tr>
+                  <td>
+                      <pre class="introduction details">
+<span class="text-decoration">STARTING DATE:- --/--/2020</span>
+<span class="text-decoration">FEES:- 3000/-</span>
+              </pre>
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                    {% if user.is_authenticated %}
+                          <div class="container">
+                                <div class="col-md-12 text-center">
+                                    <a href="{% url 'myapp:update_introduction' pk=course.pk %}" class="btn btn-info" >Update</a>
+                                </div>
+                          </div>
+                    {% endif %}
+                  </td>
+              </tr>
+            </table>
+          </div>
+
+          <!--DEFINING THE COURSE CURRICULUM-->
+
+          <div class="container">
+            <h3 class="curriculum-heading">COURSE CURRICULUM</h3>
+            <table class="curriculum-table">
+              <tr class="row">
+                {% for cur in course.curriculum.all %}
+                <td class="col-12 col-md-6">
+                    <h5 class="curriculum-sub-heading">{{cur.sub_heading}}</h5>
+<!--                    safe filter is for displaying the text only after removing the html tags from the text, -->
+<!--                    linebreaksbr filter is for getting the linebreaks in the text.-->
+                            {{cur.curriculum|safe|linebreaksbr}}
+                    <pre></pre>
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'myapp:delete_curriculum' pk=cur.pk %}" class="btn btn-danger">Delete</a>
+                        <a href="{% url 'myapp:update_curriculum' pk=cur.pk %}" class="btn btn-info">Update</a>
+                    {% endif %}
+                </td>
+                {% endfor %}
+
+              </tr>
+                {% if user.is_authenticated %}
+                <tr>
+                    <td>
+                        <a href="{% url 'myapp:curriculum' pk=course.pk %}" class="btn btn-primary">Create Section</a>
+                    </td>
+                </tr>
+                {% endif %}
+            </table>
+          </div>
+
+
+{% endblock %}
